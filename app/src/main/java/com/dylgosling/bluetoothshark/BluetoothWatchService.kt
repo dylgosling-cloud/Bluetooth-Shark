@@ -27,7 +27,7 @@ class BluetoothWatchService : Service() {
 
             if (device.address != targetAddress) return
 
-            when (intent.action) {
+            when (intent?.action) {
                 BluetoothDevice.ACTION_ACL_CONNECTED -> showStatus("$targetName connected")
                 BluetoothDevice.ACTION_ACL_DISCONNECTED -> showStatus("$targetName disconnected — reconnect it in Bluetooth settings")
             }
